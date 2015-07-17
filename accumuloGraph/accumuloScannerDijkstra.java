@@ -1,4 +1,5 @@
 public class DijkstraAccumuloGraphFeed{
+    
     String className = this.getClass().getSimpleName();
     //get accumulo property connector
     //get local properties
@@ -16,7 +17,7 @@ public class DijkstraAccumuloGraphFeed{
     }
     
     
-    }
+    
 
 ArrayList<String> list = new ArrayList<String>();
 ArrayList<String> subList = new ArrayList<String>();
@@ -37,7 +38,7 @@ public ArrayList scanList(ArrayList<String> seed) throws Exception{
     ArrayList newStuff = new ArrayList();
     
     for (String person : seed) {
-        Scanner scanner = //create scanner from data, auths()
+        Scanner scanner = //create scanner from data, auths() create scanner
         
         for(Entry<Key, Value> entry : scanner) {
             
@@ -59,4 +60,23 @@ public ArrayList scanList(ArrayList<String> seed) throws Exception{
         return newStuff;
     }
     
+}
+
+public static void main(String [] args) throws Exception {
+    
+    DijkstraAccumuloGraphFeed util = new DijkstraAccumuloGraphFeed();
+    
+    try {
+        util.setup(args)
+        util.Dijkstra(tripleData, "A", 2);
+        
+        
+        
+    }
+    
+    catch(Exception ex){ex.printStackTrace();}
+    
+    
+}
+
 }
